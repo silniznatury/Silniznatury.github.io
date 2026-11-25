@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#080a0b">
+  <meta name="description" content="Silni z Natury Coaching — trening, siła i wszechstronna sprawność.">
   <title>Silni z Natury Coaching</title>
 
   <style>
@@ -76,13 +77,14 @@
       margin: 0 auto 18px;
     }
 
-    .link-button {
-      min-height: 48px;
-      padding: 10px 12px;
+    .link-button,
+    .program-button {
       display: flex;
+      min-height: 48px;
       align-items: center;
       justify-content: center;
       gap: 9px;
+      padding: 10px 12px;
       border: 1px solid var(--border);
       border-radius: 12px;
       background: var(--surface);
@@ -93,16 +95,14 @@
       transition: border-color 160ms ease, transform 160ms ease;
     }
 
-    .link-button:hover {
+    .link-button:hover,
+    .program-button:hover {
       border-color: var(--accent);
       transform: translateY(-2px);
     }
 
-    .button-logo {
-      width: 22px;
-      height: 22px;
-      flex: 0 0 22px;
-      object-fit: contain;
+    .link-button--wide {
+      grid-column: 1 / -1;
     }
 
     .link-button svg {
@@ -111,51 +111,54 @@
       flex: 0 0 20px;
     }
 
-    .link-button--wide {
-      grid-column: 1 / -1;
-    }
-
-    .coaching-link {
-      display: inline-block;
-      margin: 4px 0 30px;
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .coaching-link:hover {
-      text-decoration: underline;
-    }
-
-    .coaching {
-      padding: 22px;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: rgba(17, 21, 23, 0.8);
+    .programs {
+      margin-top: 32px;
       text-align: left;
       scroll-margin-top: 20px;
     }
 
-    .coaching h2 {
-      margin: 0 0 10px;
-      font-size: 23px;
+    .programs h2 {
+      margin: 0 0 8px;
+      text-align: center;
+      font-size: 25px;
     }
 
-    .coaching p {
+    .programs-intro {
       margin: 0 0 18px;
       color: var(--muted);
-      font-size: 15px;
+      text-align: center;
+      font-size: 14px;
       line-height: 1.6;
     }
 
-    .coaching-photo {
-      display: block;
-      width: 100%;
-      max-height: 520px;
-      border-radius: 12px;
-      object-fit: cover;
-      object-position: center;
+    .program-card {
+      margin-bottom: 12px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .program-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .program-card p {
+      margin: 0 0 15px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .program-button {
+      width: fit-content;
+      min-height: 42px;
+      padding: 9px 14px;
+      border-radius: 10px;
+      background: #0b1012;
+      font-size: 13px;
     }
 
     footer {
@@ -178,8 +181,8 @@
         font-size: 13px;
       }
 
-      .coaching {
-        padding: 17px;
+      .program-card {
+        padding: 16px;
       }
     }
   </style>
@@ -200,17 +203,7 @@
     </p>
 
     <nav class="links" aria-label="Linki">
-      <a
-        class="link-button"
-        href="https://app.fitr.training/t/208502/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          class="button-logo"
-          src="C422FA5D-E5C9-4350-B9A2-CF1C7B41958B.png"
-          alt=""
-        >
+      <a class="link-button" href="#programs">
         <span>Programy</span>
       </a>
 
@@ -222,12 +215,20 @@
       >
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <rect
-            x="3" y="3" width="18" height="18" rx="5"
-            stroke="currentColor" stroke-width="2"
+            x="3"
+            y="3"
+            width="18"
+            height="18"
+            rx="5"
+            stroke="currentColor"
+            stroke-width="2"
           />
           <circle
-            cx="12" cy="12" r="4"
-            stroke="currentColor" stroke-width="2"
+            cx="12"
+            cy="12"
+            r="4"
+            stroke="currentColor"
+            stroke-width="2"
           />
           <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
         </svg>
@@ -244,20 +245,59 @@
       </a>
     </nav>
 
-    <a class="coaching-link" href="#coaching">
-      Poznaj ofertę coachingową ↓
-    </a>
-
-    <section class="coaching" id="coaching">
-      <h2>Coaching</h2>
-      <p>
-        Przygotowanie sportowe zawodników oraz rozwój trenerów, którzy ich szkolą.
+    <section class="programs" id="programs">
+      <h2>Dostępne programy</h2>
+      <p class="programs-intro">
+        Siła, sprawność i konsekwentny progres — wybierz kierunek dla siebie.
       </p>
-      <img
-        class="coaching-photo"
-        src="checa---direstomau---day3--13806_ef897be5-c753-458e-9f1a-4ae7392480ad.jpeg"
-        alt="Zdjęcie z zawodów"
-      >
+
+      <article class="program-card">
+        <h3>Współpraca 1-2-1</h3>
+        <p>
+          Indywidualna współpraca dopasowana do Ciebie, Twoich celów i możliwości.
+          Zacznij od formularza zgłoszeniowego.
+        </p>
+        <a
+          class="program-button"
+          href="https://app.fitr.training/coach/programs/154917/clients"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Formularz zgłoszeniowy
+        </a>
+      </article>
+
+      <article class="program-card">
+        <h3>Silni Programming</h3>
+        <p>
+          Przemyślany trening, regularna praca i mocne fundamenty.
+          Buduj siłę i rozwijaj formę krok po kroku.
+        </p>
+        <a
+          class="program-button"
+          href="https://app.fitr.training/coach/programs/160767/clients"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Zobacz program
+        </a>
+      </article>
+
+      <article class="program-card">
+        <h3>Silna Hybryda</h3>
+        <p>
+          Połączenie siły, kondycji i wszechstronnej sprawności —
+          dla tych, którzy chcą być gotowi na więcej.
+        </p>
+        <a
+          class="program-button"
+          href="https://app.fitr.training/coach/programs/254013/clients"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Zobacz program
+        </a>
+      </article>
     </section>
 
     <footer>Silni z Natury</footer>
