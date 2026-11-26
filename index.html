@@ -4,13 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#080a0b">
-  <meta name="description" content="Silni z Natury Coaching — trening, siła i wszechstronna sprawność.">
-  <title>Silni z Natury Coaching</title>
+  <meta
+    name="description"
+    content="Silni z Natury — trening CrossFit i przygotowanie do HYROX."
+  >
+  <title>Silni z Natury</title>
 
   <style>
     :root {
       --background: #080a0b;
       --surface: #111517;
+      --surface-light: #171d1f;
       --text: #f5f7f7;
       --muted: #b3babb;
       --accent: #13c6ed;
@@ -28,12 +32,12 @@
     body {
       margin: 0;
       min-height: 100vh;
-      padding: 40px 20px 56px;
+      padding: 42px 20px 32px;
       background:
         radial-gradient(
           ellipse at 50% 0%,
-          rgba(19, 198, 237, 0.1),
-          transparent 38%
+          rgba(19, 198, 237, 0.12),
+          transparent 40%
         ),
         var(--background);
       color: var(--text);
@@ -41,8 +45,12 @@
     }
 
     .page {
-      width: min(100%, 520px);
+      width: min(100%, 680px);
       margin: 0 auto;
+    }
+
+    .header {
+      margin-bottom: 38px;
       text-align: center;
     }
 
@@ -57,34 +65,33 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(28px, 7vw, 38px);
+      font-size: clamp(30px, 7vw, 42px);
       line-height: 1.1;
       letter-spacing: -1px;
     }
 
     .intro {
-      max-width: 440px;
+      max-width: 500px;
       margin: 14px auto 24px;
       color: var(--muted);
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    .links {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin: 0 auto 18px;
-    }
-
-    .link-button,
-    .program-button {
+    .top-links {
       display: flex;
-      min-height: 48px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .top-link {
+      display: inline-flex;
+      min-height: 46px;
       align-items: center;
       justify-content: center;
       gap: 9px;
-      padding: 10px 12px;
+      padding: 10px 16px;
       border: 1px solid var(--border);
       border-radius: 12px;
       background: var(--surface);
@@ -95,94 +102,87 @@
       transition: border-color 160ms ease, transform 160ms ease;
     }
 
-    .link-button:hover,
-    .program-button:hover {
+    .top-link:hover,
+    .program-link:hover {
       border-color: var(--accent);
       transform: translateY(-2px);
     }
 
-    .link-button--wide {
-      grid-column: 1 / -1;
-    }
-
-    .link-button svg {
+    .top-link svg {
       width: 20px;
       height: 20px;
       flex: 0 0 20px;
     }
 
-    .programs {
-      margin-top: 32px;
-      text-align: left;
-      scroll-margin-top: 20px;
-    }
-
-    .programs h2 {
+    .programs-heading {
       margin: 0 0 8px;
       text-align: center;
-      font-size: 25px;
+      font-size: clamp(24px, 5vw, 30px);
     }
 
     .programs-intro {
-      margin: 0 0 18px;
+      margin: 0 auto 22px;
       color: var(--muted);
       text-align: center;
-      font-size: 14px;
+      font-size: 15px;
       line-height: 1.6;
     }
 
     .program-card {
-      margin-bottom: 12px;
-      padding: 18px;
+      margin-bottom: 14px;
+      padding: 22px;
       border: 1px solid var(--border);
       border-left: 3px solid var(--accent);
-      border-radius: 14px;
-      background: var(--surface);
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--surface-light), var(--surface));
     }
 
     .program-card h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
+      margin: 0 0 10px;
+      font-size: 20px;
     }
 
     .program-card p {
-      margin: 0 0 15px;
+      margin: 0 0 18px;
       color: var(--muted);
-      font-size: 14px;
-      line-height: 1.6;
+      font-size: 15px;
+      line-height: 1.7;
     }
 
-    .program-button {
-      width: fit-content;
-      min-height: 42px;
-      padding: 9px 14px;
+    .program-link {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px;
+      border: 1px solid var(--border);
       border-radius: 10px;
       background: #0b1012;
-      font-size: 13px;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: border-color 160ms ease, transform 160ms ease;
     }
 
     footer {
       padding-top: 22px;
       color: #778184;
+      text-align: center;
       font-size: 12px;
     }
 
-    @media (max-width: 380px) {
+    @media (max-width: 480px) {
       body {
-        padding: 28px 14px 40px;
-      }
-
-      .links {
-        gap: 8px;
-      }
-
-      .link-button {
-        padding: 9px 6px;
-        font-size: 13px;
+        padding: 30px 15px 24px;
       }
 
       .program-card {
-        padding: 16px;
+        padding: 18px;
+      }
+
+      .top-link {
+        flex: 1 1 150px;
       }
     }
   </style>
@@ -190,112 +190,117 @@
 
 <body>
   <main class="page">
-    <img
-      class="logo"
-      src="C422FA5D-E5C9-4350-B9A2-CF1C7B41958B.png"
-      alt="Logo Silni z Natury"
-    >
-
-    <h1>Silni z Natury Coaching</h1>
-
-    <p class="intro">
-      Przygotowanie sportowe zawodników oraz rozwój trenerów, którzy ich szkolą.
-    </p>
-
-    <nav class="links" aria-label="Linki">
-      <a class="link-button" href="#programs">
-        <span>Programy</span>
-      </a>
-
-      <a
-        class="link-button"
-        href="https://www.instagram.com/silniznatury/"
-        target="_blank"
-        rel="noopener noreferrer"
+    <header class="header">
+      <img
+        class="logo"
+        src="C422FA5D-E5C9-4350-B9A2-CF1C7B41958B.png"
+        alt="Logo Silni z Natury"
       >
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <rect
-            x="3"
-            y="3"
-            width="18"
-            height="18"
-            rx="5"
-            stroke="currentColor"
-            stroke-width="2"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            r="4"
-            stroke="currentColor"
-            stroke-width="2"
-          />
-          <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
-        </svg>
-        <span>Silni z Natury</span>
-      </a>
 
-      <a
-        class="link-button link-button--wide"
-        href="https://docs.google.com/forms/d/1UWp950nsbaepRvYkkJl027rsehFRpnarST1urdwYRvA/viewform"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <span>Ankieta</span>
-      </a>
-    </nav>
+      <h1>Silni z Natury</h1>
 
-    <section class="programs" id="programs">
-      <h2>Dostępne programy</h2>
+      <p class="intro">
+        Trening dopasowany do Twojego celu — od nauki podstaw CrossFitu
+        po rozwój sportowej formy i przygotowanie do HYROX.
+      </p>
+
+      <nav class="top-links" aria-label="Linki zewnętrzne">
+        <a
+          class="top-link"
+          href="https://www.instagram.com/silniznatury/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect
+              x="3"
+              y="3"
+              width="18"
+              height="18"
+              rx="5"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <circle
+              cx="12"
+              cy="12"
+              r="4"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
+          </svg>
+          Instagram
+        </a>
+
+        <a
+          class="top-link"
+          href="https://app.fitr.training/t/208502/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          FITR
+        </a>
+      </nav>
+    </header>
+
+    <section aria-labelledby="programs-heading">
+      <h2 class="programs-heading" id="programs-heading">
+        Dostępne opcje współpracy
+      </h2>
+
       <p class="programs-intro">
-        Siła, sprawność i konsekwentny progres — wybierz kierunek dla siebie.
+        Wybierz program dopasowany do swoich celów i poziomu zaawansowania.
       </p>
 
       <article class="program-card">
         <h3>Współpraca 1-2-1</h3>
         <p>
-          Indywidualna współpraca dopasowana do Ciebie, Twoich celów i możliwości.
-          Zacznij od formularza zgłoszeniowego.
+          W pełni spersonalizowany program treningowy skierowany zarówno do
+          osób początkujących, które chcą nauczyć się podstaw treningu
+          CrossFit, jak i osób zaawansowanych, które chcą opanować nowe
+          umiejętności lub poprawić swoje słabe strony w sporcie.
         </p>
         <a
-          class="program-button"
-          href="https://app.fitr.training/coach/programs/154917/clients"
+          class="program-link"
+          href="https://app.fitr.training/coach/programs/154917/details"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Formularz zgłoszeniowy
+          Poznaj szczegóły
         </a>
       </article>
 
       <article class="program-card">
         <h3>Silni Programming</h3>
         <p>
-          Przemyślany trening, regularna praca i mocne fundamenty.
-          Buduj siłę i rozwijaj formę krok po kroku.
+          Strukturalny program dla zawodników CrossFit, oparty na blokach
+          treningowych trwających 8–12 tygodni. Ich celem jest systematyczny
+          rozwój konkretnych zdolności motorycznych.
         </p>
         <a
-          class="program-button"
-          href="https://app.fitr.training/coach/programs/160767/clients"
+          class="program-link"
+          href="https://app.fitr.training/coach/programs/160767/details"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Zobacz program
+          Poznaj szczegóły
         </a>
       </article>
 
       <article class="program-card">
         <h3>Silna Hybryda</h3>
         <p>
-          Połączenie siły, kondycji i wszechstronnej sprawności —
-          dla tych, którzy chcą być gotowi na więcej.
+          Program przeznaczony dla sportowców HYROX — zarówno osób
+          początkujących, jak i zaawansowanych.
         </p>
         <a
-          class="program-button"
-          href="https://app.fitr.training/coach/programs/254013/clients"
+          class="program-link"
+          href="https://app.fitr.training/coach/programs/254013/details"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Zobacz program
+          Poznaj szczegóły
         </a>
       </article>
     </section>
