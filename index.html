@@ -149,6 +149,33 @@
       line-height: 1.7;
     }
 
+    .program-card--featured {
+      position: relative;
+      padding: 26px 24px;
+      border: 2px solid var(--accent);
+      background:
+        linear-gradient(135deg, rgba(19, 198, 237, 0.13), transparent 65%),
+        linear-gradient(135deg, var(--surface-light), var(--surface));
+      box-shadow: 0 0 28px rgba(19, 198, 237, 0.12);
+    }
+
+    .featured-badge {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #061014;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    .program-card--featured h3 {
+      font-size: 23px;
+    }
+
     .program-link {
       display: inline-flex;
       min-height: 44px;
@@ -165,6 +192,17 @@
       transition: border-color 160ms ease, transform 160ms ease;
     }
 
+    .program-link--featured {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #061014;
+    }
+
+    .program-link--featured:hover {
+      border-color: #74e5ff;
+      background: #74e5ff;
+    }
+
     footer {
       padding-top: 22px;
       color: #778184;
@@ -179,6 +217,10 @@
 
       .program-card {
         padding: 18px;
+      }
+
+      .program-card--featured {
+        padding: 22px 18px;
       }
 
       .top-link {
@@ -253,7 +295,8 @@
         Wybierz program dopasowany do swoich celów i poziomu zaawansowania.
       </p>
 
-      <article class="program-card">
+      <article class="program-card program-card--featured">
+        <span class="featured-badge">Główna oferta</span>
         <h3>Współpraca 1-2-1</h3>
         <p>
           W pełni spersonalizowany program treningowy skierowany zarówno do
@@ -262,12 +305,12 @@
           umiejętności lub poprawić swoje słabe strony w sporcie.
         </p>
         <a
-          class="program-link"
-          href="https://app.fitr.training/coach/programs/154917/details"
+          class="program-link program-link--featured"
+          href="https://app.fitr.training/coach/programs/154917/clients"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Poznaj szczegóły
+          Wypełnij formularz
         </a>
       </article>
 
